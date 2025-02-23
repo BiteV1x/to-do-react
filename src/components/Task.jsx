@@ -12,18 +12,26 @@ const Task = props => {
     setIsComplete(!isComplete);
   };
   return (
-    <div className={`task relative p-4 pb-10 border rounded-md ${isComplete ? "line-through text-gray-500" : ""}`}>
-      <div>
-        <p className="text-black">
+    <div
+      className={`task relative p-4 pb-10 border rounded-md ${isComplete
+        ? "line-through text-gray-500"
+        : ""}`}
+    >
+      <div className="flex-grow overflow-hidden">
+        <p className="task-title text-black font-bold">
           {props.number}. {props.task.title}
         </p>
         <hr />
-        <div  className="overflow-hidden text-ellipsis ">
+        <div className="task-body">
           {props.task.body}
         </div>
       </div>
-        <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center"> 
-          <input type="checkbox" className="checkbox" onClick={checkboxChange} />
+      <div className="flex justify-between items-center mt-2">
+        <input
+          type="checkbox"
+          className="checkbox border-black"
+          onClick={checkboxChange}
+        />
         <div className="flex flex-wrap gap-2 justify-end">
           <MyButton onClick={() => props.edit(props.task)}>Edit</MyButton>
           <MyButton onClick={() => props.remove(props.task)}>Delete</MyButton>

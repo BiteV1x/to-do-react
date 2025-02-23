@@ -2,7 +2,7 @@ import React from 'react'
 
 const MyInput =  React.forwardRef((props, ref) => {
   return (
-    <input   className="input input-bordered input-secondary w-full h-full  " ref={ref} {...props}/>
+    <input   className="input br-2 border-black  w-full h-full  bg-white   " ref={ref} {...props}/>
   )
 })
 

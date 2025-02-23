@@ -5,11 +5,11 @@ import "../style/App.css"
 
 const ItemList = ({task, title, remove, edit}) => {
     if (!task.length) {
-        return <h1 style={{ textAlign: "center" }}>task not found</h1>;
+        return <h1 className='text-3xl'>Task not found</h1>;
       }
   return (
     <div>
-        <h1 style={{ textAlign: "center" }}>{title}</h1>
+        <h1 className='text-3xl  font-serif '>{title}</h1>
         <div className="task__container">
         {task.map((task, index) => (
           <Task key={task.id} edit={edit} remove={remove} number={index + 1} task={task} />
